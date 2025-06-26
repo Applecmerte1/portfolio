@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Project
 
 def main_page(request):
-    return render(request, 'about_me/main.html')
+    projects = Project.objects.all()
+    return render(request, 'about_me/main.html', {'projects':projects})
