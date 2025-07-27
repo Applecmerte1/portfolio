@@ -8,11 +8,11 @@
 </head>
 <body>
     <div class ='container text-center'>
-    <h1>hello blog</h1>
+    <h1>Klim written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h1>
     {% for blog in blogs %}
         <a href = "{% url 'blog:detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
-        <p>{{ blog.date }}</p>
-        <p>{{ blog.description }}</p>
+        <p>{{ blog.date|date:'M d Y' }}</p>
+        <p>{{ blog.description|striptags|truncatechars:100 }}</p>
     {% endfor %}
     </div>
 </body>

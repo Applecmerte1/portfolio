@@ -7,6 +7,7 @@
 </head>
 <body>
     {{ blog.title }}<br>
-    {{ blog.description }}
+    <h2>--{{ blog.date|date:'F jS Y' }}--</h2>
+    {{ blog.description|safe}}
 </body>
 </html>
