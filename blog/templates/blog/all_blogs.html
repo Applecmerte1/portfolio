@@ -10,7 +10,7 @@
     <div class ='container text-center'>
     <h1>hello blog</h1>
     {% for blog in blogs %}
-        <h2>{{ blog.title }}</h2>
+        <a href = "{% url 'blog:detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
         <p>{{ blog.date }}</p>
         <p>{{ blog.description }}</p>
     {% endfor %}
